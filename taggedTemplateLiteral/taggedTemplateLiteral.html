@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const city = "Dublin"
+      const something = "Guiness"
+      const otherThing = "Leprechaus"
+
+      function green(template, ...values) {
+        return template.reduce((accumulator, part, i) => {
+          // accumulator é a string que vai acumulando valores, part  é a onde o trabalho da varíavel acontece, e i é uma variavel contadora
+          return `${accumulator} <span style="color: green">${values[i - 1].toUpperCase()}</span> ${part}`
+
+        })
+      }
+
+      const ireland = green`I live in ${city} and I drink ${something} and I love ${otherThing}`
+
+      document.body.innerHTML = ireland
+    </script>
+  </body>
+</html>
